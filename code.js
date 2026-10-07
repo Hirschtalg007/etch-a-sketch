@@ -1,11 +1,13 @@
 const allDivs = document.querySelector("#gridContainer");
 
-function createSquares(){
-    for(let i = 0 ; i < 16 ; i++){
+function createSquares(grid){
+    for(let i = 0 ; i < grid*grid ; i++){
     const squareDivs = document.createElement("div");
     squareDivs.id = "squareDivs";
 
     allDivs.appendChild(squareDivs);
 }}
 
-createSquares();
+let eingabe = 16;
+
+createSquares(eingabe);
