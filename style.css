@@ -1,8 +1,9 @@
-/*#squareDivs{
-    background-color: blue;
+#squareDivs{
+    background-color: gray;
+    border: 2px solid lightgrey;
     height: 100px;
     width: 100px;
-}*/
+}
 
 #screen{
     height: 100vh;
@@ -16,7 +17,7 @@
     display: flex;
     flex-wrap: wrap;
     background-color: lightgrey;
+    border: 2px solid black;
     width: 800px;
     height: 800px;
-    gap: 10px;
 }
