@@ -2,11 +2,19 @@ const allDivs = document.querySelector("#gridContainer");
 
 function createSquares(grid){
     for(let i = 0 ; i < grid*grid ; i++){
-    const squareDivs = document.createElement("div");
-    squareDivs.id = "squareDivs";
+        const square = document.createElement("div");
+        square.id = "squareDivs";
+        setSize(square);
+        allDivs.appendChild(square);
+    }
+}
 
-    allDivs.appendChild(squareDivs);
-}}
+function setSize(square){
+    let calcHeight = 50;
+    let calcWidth = calcHeight;
+    const squareHeight = square.style.setProperty("--squareHeight", calcHeight + "px");
+    const squareWidth = square.style.setProperty("--squareWidth", calcWidth + "px");
+}
 
 let eingabe = 16;
 
