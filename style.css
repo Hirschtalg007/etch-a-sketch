@@ -1,8 +1,8 @@
 #squareDivs{
     background-color: gray;
     border: 2px solid lightgrey;
-    height: 100px;
-    width: 100px;
+    height: var(--squareHeight, 100px);
+    width: var(--squareWidth, 100px);
 }
 
 #screen{
