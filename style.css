@@ -1,6 +1,6 @@
 #squareDivs{
     background-color: gray;
-    border: 2px solid lightgrey;
+    border: var(--squareBorder, 2px) solid lightgrey;
     height: var(--squareHeight, 100px);
     width: var(--squareWidth, 100px);
 }

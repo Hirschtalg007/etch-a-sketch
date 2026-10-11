@@ -12,8 +12,10 @@ function createSquares(grid){
 function setSize(square){
     let calcHeight = 50;
     let calcWidth = calcHeight;
+    let calcBorder = 2;
     const squareHeight = square.style.setProperty("--squareHeight", calcHeight + "px");
     const squareWidth = square.style.setProperty("--squareWidth", calcWidth + "px");
+    const squareBorder = square.style.setProperty("--squareBorder", calcBorder + "px");
 }
 
 let eingabe = 16;
