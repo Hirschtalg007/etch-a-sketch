@@ -20,12 +20,26 @@ function setSize(square,UserIn){
 
 function hoover(){
     for(let i = 0 ; i < allDivs.children.length ; i++){
-        const allDivsEnter = allDivs.children[i].addEventListener("mouseenter",() => {
-            allDivs.children[i].style.backgroundColor = randColor();
-        })
-        const allDivsLeave = allDivs.children[i].addEventListener("mouseleave",() => {
-        allDivs.children[i].style.backgroundColor = "gray";
-        })
+        let opacity = 0.0;
+
+        function allDivsEnter(){
+            let color = randColor();
+            allDivs.children[i].style.backgroundColor = color.replace("rgb","rgba").replace(")",`,${opacity})`);
+            opacity += 0.1;
+            if(opacity >= 1){
+                allDivs.children[i].style.backgroundColor = "black";
+                allDivs.children[i].removeEventListener("mouseenter",allDivsEnter);
+                allDivs.children[i].removeEventListener("mouseleave",allDivsLeave);
+            }
+        }
+
+        allDivs.children[i].addEventListener("mouseenter", allDivsEnter);
+
+        function allDivsLeave(){
+            allDivs.children[i].style.backgroundColor = "gray";
+        }
+
+        allDivs.children[i].addEventListener("mouseleave", allDivsLeave);
     }
 }
 
