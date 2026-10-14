@@ -21,12 +21,19 @@ function setSize(square,UserIn){
 function hoover(){
     for(let i = 0 ; i < allDivs.children.length ; i++){
         const allDivsEnter = allDivs.children[i].addEventListener("mouseenter",() => {
-            allDivs.children[i].style.backgroundColor = "red";
+            allDivs.children[i].style.backgroundColor = randColor();
         })
         const allDivsLeave = allDivs.children[i].addEventListener("mouseleave",() => {
         allDivs.children[i].style.backgroundColor = "gray";
         })
     }
+}
+
+function randColor(){
+    const r = Math.floor(Math.random()*256);
+    const g = Math.floor(Math.random()*256);
+    const b = Math.floor(Math.random()*256);
+    return `rgb(${r},${g},${b})`
 }
 
 const newGrid = button.addEventListener("click",() =>{
